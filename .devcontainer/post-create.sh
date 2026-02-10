@@ -7,6 +7,10 @@ if [[ "${CODESPACES}" == true ]]; then
   sudo chmod 1777 /tmp
 fi
 
+# Ensure the node cache directory exists with proper permissions
+mkdir -p ~/.cache/node
+chmod -R 777 ~/.cache/node
+
 set -x
 
 exec pnpm install
